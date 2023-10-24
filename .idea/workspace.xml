@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc0240a4-58ba-431f-a12f-f016f44fba6f" name="Changes" comment="Full Addition and test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BigNumArithmetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumArithmetic.java" afterDir="false" />
-    </list>
+    <list default="true" id="dc0240a4-58ba-431f-a12f-f016f44fba6f" name="Changes" comment="Full Addition and test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +58,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698185777069</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Full Addition and test">
+      <created>1698187487827</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698187487827</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
