@@ -39,7 +39,10 @@ public class BigNumArithmetic {
 
         // Return the substring from the first non-zero character
         return (startIndex == length) ? "0" : input.substring(startIndex);
+
     }
+
+    //Perform multiplication and subtraction below
 
 
     public static void main(String[] args) {
