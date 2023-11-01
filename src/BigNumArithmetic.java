@@ -4,62 +4,99 @@ import java.io.IOException;
 
 
 public class BigNumArithmetic {
-
     // Method to perform addition of two numbers
-    public static String performAddition(String num1, String num2) {
-        // Remove spaces and leading zeroes
-        num1 = removeLeadingZeros(num1);
-        num2 = removeLeadingZeros(num2);
+    public static LList add(LList list1, LList list2) {
+        if (list1.length() > list2.length()) {
+            int lengthDifference = list1.length() - list2.length();
+            for (int i = 0; i < lengthDifference; i++) {
+                list2.append(0);
+            }
+        } else {
+            int lengthDifference = list2.length() - list1.length();
+            for (int i = 0; i < lengthDifference; i++) {
+                list1.append(0);
+            }
+        }
 
-        // Perform addition of two numbers represented as strings
-        StringBuilder result = new StringBuilder();
+        list1.moveToStart();
+        list2.moveToStart();
+        LList finalResult = new LList();
         int carry = 0;
-        int i = num1.length() - 1;
-        int j = num2.length() - 1;
 
-        while (i >= 0 || j >= 0 || carry > 0) {
-            int digit1 = (i >= 0) ? num1.charAt(i--) - '0' : 0;
-            int digit2 = (j >= 0) ? num2.charAt(j--) - '0' : 0;
-            int sum = digit1 + digit2 + carry;
-            carry = sum / 10;
-            result.append(sum % 10);
+        for (int i = 0; i < list1.length(); i++) {
+            int digit1 = (int) list1.getValue();
+            int digit2 = (int) list2.getValue();
+            int currentSum = digit1 + digit2 + carry;
+
+            if (currentSum > 9) {
+                carry = 1;
+                currentSum -= 10;
+                finalResult.append(currentSum);
+            } else {
+                carry = 0;
+                finalResult.append(currentSum);
+            }
+
+            list1.next();
+            list2.next();
         }
 
-
-        return result.reverse().toString();
-    }
-
-    public static String removeLeadingZeros(String input) {
-        int length = input.length();
-        int startIndex = 0;
-
-        // Find the first non-zero character
-        while (startIndex < length && input.charAt(startIndex) == '0') {
-            startIndex++;
+        if (carry == 1) {
+            finalResult.append(carry);
         }
 
-        // Return the substring from the first non-zero character
-        return (startIndex == length) ? "0" : input.substring(startIndex);
-
+        return finalResult;
     }
 
+    public static String toString(LList string) {
+        String space = "";
+        //loop through LList and append value into String 's'
+        for (int i = string.length() - 1; i > -1; i--) {
+            space += string.get(i);
+        }
+        return space;
+    }
+
+    public static String removeZeros(String s) {
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (s.charAt(0) == '0') {
+                s = s.replaceFirst("0", "");
+            }
+        }
+        return s;
+    }
+
+    public static String listToString(LList list) {
+        String result = "";
+        for (int i = 0; i < list.length(); i++) {
+            int num = (int)list.getValue();
+            list.next();
+            result += num;
+        }
+        result = new StringBuilder(result).reverse().toString();
+        return result;
+    }
+    public static LList stringToList(String s) {
+        LList list = new LList();
+        for (int i = s.length() - 1; i > -1; i--) {
+            int num = Character.getNumericValue(s.charAt(i));
+            list.append(num);
+        }
+        return list;
+    }
     //Perform multiplication and subtraction below
-
-
     public static void main(String[] args) {
         if (args.length != 1) {
             System.err.println("Usage: java BigNumArithmetic <input-file>");
             System.exit(1);
         }
-
         String inputFile = args[0];
-
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                // Parse the RPN expression from 'line'
-                // Implement the stack-based evaluation of the expression
-                // Handle errors and print the result or an error message
+                // Parse the RPN
+                // Implement the stack-based
+                // Handle errors
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,25 +1,49 @@
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class BigNumTest {
 
     @Test
-    public void testAddition() {
-        // Test addition of two positive numbers
-        assertEquals("5", BigNumArithmetic.performAddition("2", "3"));
-        assertEquals("11", BigNumArithmetic.performAddition("8", "3"));
-        assertEquals("123556", BigNumArithmetic.performAddition("98765", "24791"));
+    public void addTest() {
+        BigNumArithmetic bn = new BigNumArithmetic();
+        //create 2 LLists to be added
+        LList a = new LList();
+        LList b = new LList();
+        //append values to LLists
+        a.append(9);
+        a.append(9);
+        b.append(1);
 
-        // Test addition with leading zeroes
-        assertEquals("5", BigNumArithmetic.performAddition("002", "03"));
-        assertEquals("1234", BigNumArithmetic.performAddition("0001234", "0000"));
+        assertEquals("100", bn.toString(bn.add(a, b)));
 
-        // Test addition of a number with zero
-        assertEquals("12345", BigNumArithmetic.performAddition("12345", "0"));
+        a.clear();
+        b.clear();
 
-        // Test addition of large numbers
-        assertEquals("1000000000000000000000000000000000000000", BigNumArithmetic.performAddition("999999999999999999999999999999999999999", "1"));
-        assertEquals("3141592653589793238462643383279502884197", BigNumArithmetic.performAddition("3141592653589793238462643383279502884196", "1"));
+        a.append(9);
+        a.append(9);
+        a.append(9);
+
+        b.append(1);
+        assertEquals("1000", bn.toString(bn.add(a,b)));
+
+        a.clear();
+        b.clear();
+        a.append(4);
+        a.append(3);
+        a.append(2);
+        a.append(1);
+
+        b.append(0);
+        b.append(0);
+
+
+
+        assertEquals("1234", bn.toString(bn.add(a,b)));
+
+        a.clear();
+        b.clear();
+        a.append(0);
+        assertEquals("0",bn.toString(bn.add(a,b)));
     }
 }
-
