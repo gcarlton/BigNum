@@ -1,6 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
+import java.io.IOException;;
 import java.util.Stack;
 
 
@@ -59,7 +59,6 @@ public class BigNumArithmetic {
         }
         return y.substring(x);
     }
-
     public static String listToString(LList list) {
         String y = "";
         for (int i = 0; i < list.length(); i++) {
@@ -82,7 +81,6 @@ public class BigNumArithmetic {
     //Perform multiplication and subtraction below
     public static LList evaluateRPN(String expression) {
         Stack<LList> stack = new Stack<>();
-
         String[] t = expression.split("\\s+");
 
         for (String token : t) {
@@ -95,9 +93,8 @@ public class BigNumArithmetic {
             } else if (token.equals("+") || token.equals("*") || token.equals("-")) {
                 // Operator, pop the required number of operands and perform the operation
                 if (stack.size() < 2) {
-                    throw new IllegalArgumentException("Not enough operands for operator: " + token);
+                    return new LList();
                 }
-
                 LList op2 = stack.pop();
                 LList op1 = stack.pop();
 
@@ -111,12 +108,13 @@ public class BigNumArithmetic {
                     // stack.push(subtract(op1, op2));
                 }
             } else {
-                throw new IllegalArgumentException("Invalid : " + token);
+                return new LList();
             }
         }
 
         if (stack.size() != 1) {
-            throw new IllegalArgumentException("Invalid exp");
+            return new LList();
+
         }
 
         return stack.pop();
@@ -125,22 +123,18 @@ public class BigNumArithmetic {
     public static void main(String[] args) {
         String inputFileName = "AdditionInput.txt";
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFileName))) {
-            String line;
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFileName))){
+        String line;
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
-
                 if (line.isEmpty()) continue;
                 try {
                     // Evaluate the expression using evaluateRPN
                     LList result = evaluateRPN(line);
-
                     // Print the original expression
                     System.out.print(line + " = ");
-
                     // Convert and print the result
                     System.out.println(listToString(result));
-
                 } catch (Exception e) {
                     // Handle any exceptions and print an error message
                     System.out.println(line + " = Error: " + e.getMessage()); // Print an error message
