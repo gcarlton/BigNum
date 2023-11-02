@@ -1,6 +1,5 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;;
+import java.io.*;
+
 import java.util.Stack;
 
 
@@ -59,6 +58,7 @@ public class BigNumArithmetic {
         }
         return y.substring(x);
     }
+
     public static String listToString(LList list) {
         String y = "";
         for (int i = 0; i < list.length(); i++) {
@@ -69,6 +69,7 @@ public class BigNumArithmetic {
         y = new StringBuilder(y).reverse().toString();
         return y;
     }
+
     public static LList stringToList(String y) {
         LList list = new LList();
         for (int i = y.length() - 1; i > -1; i--) {
@@ -121,30 +122,36 @@ public class BigNumArithmetic {
     }
 
     public static void main(String[] args) {
-        String inputFileName = "AdditionInput.txt";
+        //String inputFileName = args[0];
+        //String inputFileName = "AdditionInput.txt";
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFileName))){
-        String line;
-            while ((line = reader.readLine()) != null) {
-                line = line.trim();
-                if (line.isEmpty()) continue;
-                try {
-                    // Evaluate the expression using evaluateRPN
-                    LList result = evaluateRPN(line);
-                    // Print the original expression
-                    System.out.print(line + " = ");
-                    // Convert and print the result
-                    System.out.println(listToString(result));
-                } catch (Exception e) {
-                    // Handle any exceptions and print an error message
-                    System.out.println(line + " = Error: " + e.getMessage()); // Print an error message
+        if (args.length > 0) {
+            String fileName = args[0];
+            File file = new File(fileName);
+            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    line = line.trim();
+                    if (line.isEmpty()) continue;
+                    try {
+                        // Evaluate the expression using evaluateRPN
+                        LList result = evaluateRPN(line);
+                        // Print the original expression
+                        System.out.print(line + " = ");
+                        // Convert and print the result
+                        System.out.println(listToString(result));
+                    } catch (Exception e) {
+                        // Handle any exceptions and print an error message
+                        System.out.println(line + " = Error: " + e.getMessage()); // Print an error message
+                    }
                 }
+            } catch (IOException e) {
+                System.err.println("Error reading the input file: " + e.getMessage());
             }
-        } catch (IOException e) {
-            System.err.println("Error reading the input file: " + e.getMessage());
         }
     }
 }
+
 
 
 
