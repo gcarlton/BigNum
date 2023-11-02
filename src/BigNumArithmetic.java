@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Stack;
 
 
 public class BigNumArithmetic {
@@ -17,17 +18,14 @@ public class BigNumArithmetic {
                 list1.append(0);
             }
         }
-
         list1.moveToStart();
         list2.moveToStart();
         LList finalResult = new LList();
         int carry = 0;
-
         for (int i = 0; i < list1.length(); i++) {
             int digit1 = (int) list1.getValue();
             int digit2 = (int) list2.getValue();
             int currentSum = digit1 + digit2 + carry;
-
             if (currentSum > 9) {
                 carry = 1;
                 currentSum -= 10;
@@ -36,71 +34,124 @@ public class BigNumArithmetic {
                 carry = 0;
                 finalResult.append(currentSum);
             }
-
             list1.next();
             list2.next();
         }
-
         if (carry == 1) {
             finalResult.append(carry);
         }
-
         return finalResult;
     }
 
     public static String toString(LList string) {
         String space = "";
-        //loop through LList and append value into String 's'
+        //loop through LList and append  into string
         for (int i = string.length() - 1; i > -1; i--) {
             space += string.get(i);
         }
         return space;
     }
 
-    public static String removeZeros(String s) {
-        for (int i = 0; i < s.length() - 1; i++) {
-            if (s.charAt(0) == '0') {
-                s = s.replaceFirst("0", "");
-            }
+    public static String removeZeros(String y) {
+        int x = 0;
+        while (x < y.length() - 1 && y.charAt(x) == '0') {
+            x++;
         }
-        return s;
+        return y.substring(x);
     }
 
     public static String listToString(LList list) {
-        String result = "";
+        String y = "";
         for (int i = 0; i < list.length(); i++) {
-            int num = (int)list.getValue();
+            int num = (int) list.getValue();
             list.next();
-            result += num;
+            y += num;
         }
-        result = new StringBuilder(result).reverse().toString();
-        return result;
+        y = new StringBuilder(y).reverse().toString();
+        return y;
     }
-    public static LList stringToList(String s) {
+    public static LList stringToList(String y) {
         LList list = new LList();
-        for (int i = s.length() - 1; i > -1; i--) {
-            int num = Character.getNumericValue(s.charAt(i));
-            list.append(num);
+        for (int i = y.length() - 1; i > -1; i--) {
+            int x = Character.getNumericValue(y.charAt(i));
+            list.append(x);
         }
         return list;
     }
+
     //Perform multiplication and subtraction below
-    public static void main(String[] args) {
-        if (args.length != 1) {
-            System.err.println("Usage: java BigNumArithmetic <input-file>");
-            System.exit(1);
-        }
-        String inputFile = args[0];
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                // Parse the RPN
-                // Implement the stack-based
-                // Handle errors
+    public static LList evaluateRPN(String expression) {
+        Stack<LList> stack = new Stack<>();
+
+        String[] t = expression.split("\\s+");
+
+        for (String token : t) {
+            token = token.trim(); // Remove leading/trailing spaces
+            if (token.matches("\\d+")) {
+                // Operand, convert to LList and push to the stack
+                String op = removeZeros(token);
+                LList x = stringToList(op);
+                stack.push(x);
+            } else if (token.equals("+") || token.equals("*") || token.equals("-")) {
+                // Operator, pop the required number of operands and perform the operation
+                if (stack.size() < 2) {
+                    throw new IllegalArgumentException("Not enough operands for operator: " + token);
+                }
+
+                LList op2 = stack.pop();
+                LList op1 = stack.pop();
+
+                if (token.equals("+")) {
+                    stack.push(add(op1, op2));
+                } else if (token.equals("*")) {
+                    // Implement multiplication
+                    // stack.push(multiply(op1, op2));
+                } else if (token.equals("-")) {
+                    // Implement subtraction
+                    // stack.push(subtract(op1, op2));
+                }
+            } else {
+                throw new IllegalArgumentException("Invalid : " + token);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+
+        if (stack.size() != 1) {
+            throw new IllegalArgumentException("Invalid exp");
+        }
+
+        return stack.pop();
     }
 
+    public static void main(String[] args) {
+        String inputFileName = "AdditionInput.txt";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFileName))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                line = line.trim();
+
+                if (line.isEmpty()) continue;
+                try {
+                    // Evaluate the expression using evaluateRPN
+                    LList result = evaluateRPN(line);
+
+                    // Print the original expression
+                    System.out.print(line + " = ");
+
+                    // Convert and print the result
+                    System.out.println(listToString(result));
+
+                } catch (Exception e) {
+                    // Handle any exceptions and print an error message
+                    System.out.println(line + " = Error: " + e.getMessage()); // Print an error message
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading the input file: " + e.getMessage());
+        }
+    }
 }
+
+
+
+

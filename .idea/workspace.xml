@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc0240a4-58ba-431f-a12f-f016f44fba6f" name="Changes" comment="testing">
-      <change afterPath="$PROJECT_DIR$/src/LList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Link.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/List.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Stack.java" afterDir="false" />
+    <list default="true" id="dc0240a4-58ba-431f-a12f-f016f44fba6f" name="Changes" comment="New Addition">
+      <change afterPath="$PROJECT_DIR$/AdditionInput.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BigNumArithmetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumArithmetic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BigNumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +47,12 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gcarl\IdeaProjects\BigNum" />
+      <recent name="C:\Users\gcarl\IdeaProjects\BigNum\src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,12 +83,20 @@
       <option name="project" value="LOCAL" />
       <updated>1698187628557</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New Addition">
+      <created>1698802365353</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698802365353</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Full Addition and test" />
     <MESSAGE value="testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing" />
+    <MESSAGE value="New Addition" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Addition" />
   </component>
 </project>
