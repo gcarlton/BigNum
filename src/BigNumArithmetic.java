@@ -1,6 +1,6 @@
 import java.io.*;
-
 import java.util.Stack;
+
 
 
 public class BigNumArithmetic {
@@ -80,6 +80,74 @@ public class BigNumArithmetic {
     }
 
     //Perform multiplication and subtraction below
+    public static LList subtract(LList list1, LList list2) {
+
+        // Check if list1 is smaller than list2 based on lengths
+        if (list1.length() < list2.length()) {
+            // Swap list1 and list2
+            LList temp = list1;
+            list1 = list2;
+            list2 = temp;
+        } else if (list1.length() == list2.length()) {
+            // If lengths are equal, iterate through the lists to find the greater number
+            list1.moveToStart();
+            list2.moveToStart();
+
+            while (list1.currPos() < list1.length()) {
+                int digit1 = (int) list1.getValue();
+                int digit2 = (int) list2.getValue();
+                if (digit1 < digit2) {
+                    // Swap list1 and list2
+                    LList temp = list1;
+                    list1 = list2;
+                    list2 = temp;
+                } else if (digit1 > digit2) {
+                    // list1 is greater, no need to swap
+                    break; // No need to continue checking
+                }
+                list1.next();
+                list2.next();
+            }
+        }
+        // Check if list1 is longer than list2
+        if (list1.length() > list2.length()) {
+            // Calculate the difference in length between list1 and list2
+            int lengthDifference = list1.length() - list2.length();
+            // Pad list2 with leading zeros to match the length of list1
+            for (int i = 0; i < lengthDifference; i++) {
+                list2.append(0);
+            }
+        } else {
+            // Calculate the difference in length between list2 and list1
+            int lengthDifference = list2.length() - list1.length();
+            // Pad list1 with leading zeros to match the length of list2
+            for (int i = 0; i < lengthDifference; i++) {
+                list1.append(0);
+            }
+        }
+        list1.moveToStart();
+        list2.moveToStart();
+        LList finalResult = new LList();
+        int borrow = 0;
+        for (int i = 0; i < list1.length(); i++) {
+            int digit1 = (int) list1.getValue();
+            int digit2 = (int) list2.getValue() + borrow;
+            if (digit1 < digit2) {
+                borrow = 1;
+                digit1 += 10;
+            } else {
+                borrow = 0;
+            }
+            int currentDifference = digit1 - digit2;
+            finalResult.append(currentDifference);
+            list1.next();
+            list2.next();
+        }
+
+        return finalResult;
+    }
+
+
     public static LList evaluateRPN(String expression) {
         Stack<LList> stack = new Stack<>();
         String[] t = expression.split("\\s+");
@@ -106,7 +174,7 @@ public class BigNumArithmetic {
                     // stack.push(multiply(op1, op2));
                 } else if (token.equals("-")) {
                     // Implement subtraction
-                    // stack.push(subtract(op1, op2));
+                     stack.push(subtract(op1, op2));
                 }
             } else {
                 return new LList();
