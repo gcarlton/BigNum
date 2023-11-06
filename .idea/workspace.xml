@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc0240a4-58ba-431f-a12f-f016f44fba6f" name="Changes" comment="made the file read from the command line">
+    <list default="true" id="dc0240a4-58ba-431f-a12f-f016f44fba6f" name="Changes" comment="Subtraction method">
+      <change afterPath="$PROJECT_DIR$/src/LListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LStackTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BigNumArithmetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumArithmetic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BigNumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -114,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698968765413</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Subtraction method">
+      <created>1699226536801</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699226536801</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -123,6 +131,7 @@
     <MESSAGE value="New Addition" />
     <MESSAGE value="Right addition just need to submit to him" />
     <MESSAGE value="made the file read from the command line" />
-    <option name="LAST_COMMIT_MESSAGE" value="made the file read from the command line" />
+    <MESSAGE value="Subtraction method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Subtraction method" />
   </component>
 </project>
