@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc0240a4-58ba-431f-a12f-f016f44fba6f" name="Changes" comment="Subtraction method">
-      <change afterPath="$PROJECT_DIR$/src/LListTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LStackTest.java" afterDir="false" />
+    <list default="true" id="dc0240a4-58ba-431f-a12f-f016f44fba6f" name="Changes" comment="Comments and New Test Cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BigNumArithmetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumArithmetic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BigNumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumTest.java" afterDir="false" />
@@ -122,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699226536801</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Comments and New Test Cases">
+      <created>1699235229662</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699235229662</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -132,6 +137,7 @@
     <MESSAGE value="Right addition just need to submit to him" />
     <MESSAGE value="made the file read from the command line" />
     <MESSAGE value="Subtraction method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Subtraction method" />
+    <MESSAGE value="Comments and New Test Cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments and New Test Cases" />
   </component>
 </project>

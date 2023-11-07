@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.Stack;
 
-
-
 public class BigNumArithmetic {
     // Method to perform addition of two numbers that are in linked lists
     public static LList add(LList list1, LList list2) {
@@ -138,8 +136,8 @@ public class BigNumArithmetic {
             int digit1 = (int) list1.getValue();
             int digit2 = (int) list2.getValue() + borrow;
             if (digit1 < digit2) {
+                digit1+= 10;
                 borrow = 1;
-                digit1 += 10;
             } else {
                 borrow = 0;
             }
@@ -232,6 +230,32 @@ public class BigNumArithmetic {
         // Return the final result
         return finalNum;
     }
+
+    // Method to check if op1 is less than op2
+        public static boolean isLess(LList list1, LList list2) {
+            // Check if list1 is smaller than list2 based on lengths
+            if (list1.length() < list2.length()) {
+                return true;
+            } else if (list1.length() == list2.length()) {
+                // If lengths are equal, iterate through the lists to find the greater number
+                list1.moveToStart();
+                list2.moveToStart();
+                for(int i = 0; i < list1.length(); i ++) {
+                    int digit1 = (int) list1.getValue();
+                    int digit2 = (int) list2.getValue();
+                    if (digit1 < digit2) {
+                        return true;
+                    } else if (digit1 > digit2) {
+                        return false;
+                    }
+                    list1.next();
+                    list2.next();
+                }
+            }
+
+            // The numbers are equal
+            return false;
+        }
     //Method that does the RPN calculator
     public static LList evaluateRPN(String expression) {
         Stack<LList> stack = new Stack<>();
@@ -251,28 +275,34 @@ public class BigNumArithmetic {
                 }
                 LList op2 = stack.pop();
                 LList op1 = stack.pop();
-
                 if (token.equals("+")) {
                     stack.push(add(op1, op2));
-                } else if (token.equals("*")) {
+                }
+                if (token.equals("*")) {
                     // Implement multiplication
                     stack.push(multiply(op1, op2));
-                } else if (token.equals("-")) {
-                    // Implement subtraction
-                     stack.push(subtract(op1, op2));
                 }
-            } else {
-                return new LList();
+                if (token.equals("-")) {
+                    if (isLess(op1, op2)) {
+                        LList s = subtract(op2, op1);
+                        stack.push(s);
+                        stack.pop();
+                    }
+
+                        stack.push(subtract(op1, op2));
+                    }
+                } else {
+                    return new LList();
+                }
             }
+            if (stack.size() != 1) {
+                return new LList();
+
+            }
+            return stack.pop();
         }
 
-        if (stack.size() != 1) {
-            return new LList();
 
-        }
-
-        return stack.pop();
-    }
 // Main method to read from command line
     public static void main(String[] args) {
         //String inputFileName = args[0];
@@ -304,8 +334,3 @@ public class BigNumArithmetic {
         }
     }
 }
-
-
-
-
-

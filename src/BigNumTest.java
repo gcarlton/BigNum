@@ -1,5 +1,6 @@
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 public class BigNumTest {
@@ -13,37 +14,37 @@ public class BigNumTest {
         num1 = BigNumArithmetic.stringToList("1279");
         num2 = BigNumArithmetic.stringToList("523");
         result = BigNumArithmetic.add(num1, num2);
-        assertEquals("1802", BigNumArithmetic.listToString(result), "addition of postive numbers");
+        assertEquals("1802", BigNumArithmetic.listToString(result));
 
         // Test Case 2: Unequal List Lengths
         num1 = BigNumArithmetic.stringToList("123");
         num2 = BigNumArithmetic.stringToList("4567");
         result = BigNumArithmetic.add(num1, num2);
-        assertEquals("4690", BigNumArithmetic.listToString(result), "Addition with unequal list lengths");
+        assertEquals("4690", BigNumArithmetic.listToString(result));
 
 // Test Case 3: Empty Lists
         num1 = new LList();
         num2 = new LList();
         result = BigNumArithmetic.add(num1, num2);
-        assertEquals("", BigNumArithmetic.listToString(result), "Addition with empty lists");
+        assertEquals("", BigNumArithmetic.listToString(result));
 
 // Test Case 4: Carry-Over
         num1 = BigNumArithmetic.stringToList("999");
         num2 = BigNumArithmetic.stringToList("1");
         result = BigNumArithmetic.add(num1, num2);
-        assertEquals("1000", BigNumArithmetic.listToString(result), "Addition with carry-over");
+        assertEquals("1000", BigNumArithmetic.listToString(result));
 
 // Test Case 5: Leading Zeroes
         num1 = BigNumArithmetic.stringToList("012");
         num2 = BigNumArithmetic.stringToList("003");
         result = BigNumArithmetic.add(num1, num2);
-        assertEquals("15", BigNumArithmetic.listToString(result), "Addition with leading zeroes");
+        assertEquals("15", BigNumArithmetic.listToString(result));
 
 // Test Case 7: Large Numbers
         num1 = BigNumArithmetic.stringToList("9999999");
         num2 = BigNumArithmetic.stringToList("1");
         result = BigNumArithmetic.add(num1, num2);
-        assertEquals("10000000", BigNumArithmetic.listToString(result), "Addition of large numbers");
+        assertEquals("10000000", BigNumArithmetic.listToString(result));
 
 
     }
@@ -89,36 +90,42 @@ public class BigNumTest {
         num1 = BigNumArithmetic.stringToList("1279");
          num2 = BigNumArithmetic.stringToList("523");
          result = BigNumArithmetic.subtract(num1, num2);
-        assertEquals("756", BigNumArithmetic.listToString(result), "Subtraction of positive numbers");
+        assertEquals("756", BigNumArithmetic.listToString(result));
 
         // Test subtraction with leading zeros
         num1 = BigNumArithmetic.stringToList("001005");
         num2 = BigNumArithmetic.stringToList("509");
         result = BigNumArithmetic.subtract(num1, num2);
-        assertEquals("496", BigNumArithmetic.listToString(result), "Subtraction with leading zeros");
+        assertEquals("496", BigNumArithmetic.listToString(result));
 
         // Test subtraction with unequal lengths
         num1 = BigNumArithmetic.stringToList("12345");
         num2 = BigNumArithmetic.stringToList("678");
         result = BigNumArithmetic.subtract(num1, num2);
-        assertEquals("11667", BigNumArithmetic.listToString(result), "Subtraction with unequal lengths");
+        assertEquals("11667", BigNumArithmetic.listToString(result));
 
 
         num1 = BigNumArithmetic.stringToList("9");
         num2 = BigNumArithmetic.stringToList("8");
         result = BigNumArithmetic.subtract(num1, num2);
-        assertEquals("1", BigNumArithmetic.listToString(result), "Subtraction with equal length");
+        assertEquals("1", BigNumArithmetic.listToString(result));
+
+        num1 = BigNumArithmetic.stringToList("9");
+        num2 = BigNumArithmetic.stringToList("9");
+        result = BigNumArithmetic.subtract(num1, num2);
+        assertEquals("0", BigNumArithmetic.listToString(result));
+
 
         num1 = BigNumArithmetic.stringToList("25");
         num2 = BigNumArithmetic.stringToList("29");
         result = BigNumArithmetic.subtract(num1, num2);
-        assertEquals("4", BigNumArithmetic.listToString(result), "Subtraction with first less than second");
+        assertEquals("4", BigNumArithmetic.listToString(result));
 
         // Test subtraction with borrow
         num1 = BigNumArithmetic.stringToList("856");
         num2 = BigNumArithmetic.stringToList("956");
         result = BigNumArithmetic.subtract(num1, num2);
-        assertEquals("100", BigNumArithmetic.listToString(result), "Subtraction with first less than second");
+        assertEquals("100", BigNumArithmetic.listToString(result));
     }
     @Test
     public void testRemoveZeros() {
@@ -178,6 +185,36 @@ public class BigNumTest {
         LList result4 = BigNumArithmetic.evaluateRPN("2 3 4 + *");
         assertEquals("14", BigNumArithmetic.listToString(result4));
 
+        LList result5 = BigNumArithmetic.evaluateRPN("44 55 -");
+        assertEquals("11", BigNumArithmetic.listToString(result5));
+
+
+    }
+    @Test
+    public void testIsLess() {
+        // Test case 1: list1 and list2 are equal
+        LList list1a = BigNumArithmetic.stringToList("12345");
+        LList list2a = BigNumArithmetic.stringToList("12345");
+        boolean result1 = BigNumArithmetic.isLess(list1a, list2a);
+        assertEquals(false, result1);
+
+        // Test case 2: list1 is less than list2
+        LList list1b = BigNumArithmetic.stringToList("12345");
+        LList list2b = BigNumArithmetic.stringToList("12346");
+        boolean result2 = BigNumArithmetic.isLess(list1b, list2b);
+        assertEquals(true, result2);
+
+        // Test case 3: list1 is greater than list2
+        LList list1c = BigNumArithmetic.stringToList("12346");
+        LList list2c = BigNumArithmetic.stringToList("12345");
+        boolean result3 = BigNumArithmetic.isLess(list1c, list2c);
+        assertEquals(false, result3);
+
+        // Test case 4: list1 is less than list2 due to shorter length
+        LList list1d = BigNumArithmetic.stringToList("123");
+        LList list2d = BigNumArithmetic.stringToList("12345");
+        boolean result4 = BigNumArithmetic.isLess(list1d, list2d);
+        assertEquals(true, result4);
     }
     }
 
