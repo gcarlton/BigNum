@@ -1,143 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc0240a4-58ba-431f-a12f-f016f44fba6f" name="Changes" comment="Comments and New Test Cases">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="be10b8a7-7f2e-4b5a-8e72-cb28d6ca6ede" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigNum.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BigNumArithmetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumArithmetic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BigNumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LStackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LStackTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="master" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2X0KNTzHgRBhQE4BrSVKAl6XhEe" />
+  <component name="ProjectId" id="2fTxhy99X9IKwExSzNswXHknVwm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gcarl\IdeaProjects\BigNum" />
-      <recent name="C:\Users\gcarl\IdeaProjects\BigNum\.idea" />
-      <recent name="C:\Users\gcarl\IdeaProjects\BigNum\src" />
-    </key>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dc0240a4-58ba-431f-a12f-f016f44fba6f" name="Changes" comment="" />
-      <created>1697760517049</created>
+      <changelist id="be10b8a7-7f2e-4b5a-8e72-cb28d6ca6ede" name="Changes" comment="" />
+      <created>1713838992353</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1697760517049</updated>
+      <updated>1713838992353</updated>
     </task>
-    <task id="LOCAL-00001" summary="Full Addition and test">
-      <created>1698185777069</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1698185777069</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Full Addition and test">
-      <created>1698187487827</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1698187487827</updated>
-    </task>
-    <task id="LOCAL-00003" summary="testing">
-      <created>1698187628557</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1698187628557</updated>
-    </task>
-    <task id="LOCAL-00004" summary="New Addition">
-      <created>1698802365353</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1698802365353</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Right addition just need to submit to him">
-      <created>1698892905659</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1698892905659</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Right addition just need to submit to him">
-      <created>1698944435919</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1698944435919</updated>
-    </task>
-    <task id="LOCAL-00007" summary="made the file read from the command line">
-      <created>1698968765413</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1698968765413</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Subtraction method">
-      <created>1699226536801</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1699226536801</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Comments and New Test Cases">
-      <created>1699235229662</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1699235229662</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Full Addition and test" />
-    <MESSAGE value="testing" />
-    <MESSAGE value="New Addition" />
-    <MESSAGE value="Right addition just need to submit to him" />
-    <MESSAGE value="made the file read from the command line" />
-    <MESSAGE value="Subtraction method" />
-    <MESSAGE value="Comments and New Test Cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comments and New Test Cases" />
   </component>
 </project>
