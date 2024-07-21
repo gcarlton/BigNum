@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="be10b8a7-7f2e-4b5a-8e72-cb28d6ca6ede" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BigNum.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BigNumArithmetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumArithmetic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BigNumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigNumTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LStackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LStackTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="be10b8a7-7f2e-4b5a-8e72-cb28d6ca6ede" name="Changes" comment="Big Num project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +12,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2fTxhy99X9IKwExSzNswXHknVwm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -41,6 +37,41 @@
       <option name="presentableId" value="Default" />
       <updated>1713838992353</updated>
     </task>
+    <task id="LOCAL-00001" summary="Big Num project">
+      <created>1713839069059</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713839069059</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Big Num project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Big Num project" />
   </component>
 </project>
